@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Elda Loop</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple: #8B5CF6;
+            --purple-light: #A78BFA;
+            --purple-glow: #C4B5FD;
+            --purple-dark: #6D28D9;
+            --teal: #3DBDA8;
+            --teal-light: #5EEAD4;
+            --yellow: #FBBF24;
+            --dark: #0D0A14;
+            --dark-light: #1A1525;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        
+        header {
+            padding: 18px 0;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(13, 10, 20, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+        header .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); }
+        .logo svg { width: 42px; height: 42px; }
+        .logo span { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; }
+        .back-link { color: var(--purple-glow); text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: var(--teal-light); }
+        
+        main { padding: 140px 0 80px; }
+        
+        h1 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .last-updated { color: var(--purple-glow); font-size: 14px; margin-bottom: 40px; opacity: 0.7; }
+        
+        h2 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 48px 0 16px;
+            color: var(--teal-light);
+        }
+        p { margin-bottom: 16px; color: var(--purple-glow); }
+        strong { color: var(--white); }
+        ul, ol { margin: 16px 0; padding-left: 24px; }
+        li { margin-bottom: 10px; color: var(--purple-glow); }
+        li::marker { color: var(--teal); }
+        a { color: var(--teal-light); }
+        a:hover { color: var(--teal); }
+        
+        .warning-box {
+            background: rgba(251, 191, 36, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        .warning-box strong { color: var(--yellow); }
+        
+        .legal-note {
+            background: var(--dark-light);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+            font-size: 14px;
+            color: var(--purple-glow);
+            opacity: 0.8;
+        }
+        
+        footer {
+            padding: 32px 0;
+            border-top: 1px solid rgba(139, 92, 246, 0.12);
+        }
+        footer .container { max-width: 1200px; }
+        .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+        .footer-links a { color: var(--purple-glow); text-decoration: none; font-size: 14px; }
+        .footer-links a:hover { color: var(--teal-light); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <svg viewBox="0 0 100 100" fill="none">
+                    <g transform="translate(5, 10) scale(0.9)">
+                        <path d="M75 35 C82 38, 85 45, 80 52 C75 58, 65 58, 55 55 C40 50, 25 55, 12 70 C8 75, 5 80, 3 82 L8 72 C6 76, 4 79, 2 82 L10 68 C20 55, 35 48, 50 48 C60 48, 70 42, 75 35Z" fill="#3DBDA8"/>
+                        <ellipse cx="68" cy="48" rx="12" ry="8" fill="#2A9D8F" transform="rotate(-15 68 48)"/>
+                        <circle cx="78" cy="42" r="5" fill="#F3F0FF"/>
+                    </g>
+                </svg>
+                <span>Elda Loop</span>
+            </a>
+            <a href="/" class="back-link">← Back to Home</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last updated: January 2026</p>
+
+            <p>Welcome to Elda Loop. These Terms govern your use of our app. By using Elda Loop, you agree to these terms.</p>
+
+            <h2>1. Eligibility</h2>
+            
+            <p>You must be <strong>at least 18 years old</strong> to use Elda Loop. By creating an account, you confirm you meet this requirement.</p>
+
+            <h2>2. Your Account</h2>
+            
+            <ul>
+                <li>Provide accurate, current information</li>
+                <li>Keep your password secure</li>
+                <li>Update info if it changes</li>
+                <li>You're responsible for activity on your account</li>
+            </ul>
+            <p>We may suspend accounts that violate these terms or contain false information.</p>
+
+            <h2>3. Acceptable Use</h2>
+            
+            <p>Please don't:</p>
+            <ul>
+                <li>Use the app for illegal purposes</li>
+                <li>Harass, threaten, or abuse other users</li>
+                <li>Post defamatory, obscene, or harmful content</li>
+                <li>Impersonate others</li>
+                <li>Spam or distribute malware</li>
+                <li>Attempt unauthorized access to accounts</li>
+                <li>Interfere with app functionality</li>
+                <li>Use bots, scrapers, or automation</li>
+                <li>Reverse engineer the app</li>
+                <li>Commercialize without permission</li>
+            </ul>
+
+            <h2>4. Your Content</h2>
+            
+            <p>Content you post (photos, bio, messages) remains yours. By posting, you grant us a license to display it in the app. Make sure you have rights to anything you share.</p>
+            
+            <p>We may remove content that violates these terms.</p>
+
+            <h2>5. Meeting Other Users</h2>
+            
+            <div class="warning-box">
+                <p><strong>Important:</strong> We don't verify user identities beyond basic account creation. When meeting people from the app:</p>
+                <ul>
+                    <li>Use common sense and good judgment</li>
+                    <li>Meet in public places first</li>
+                    <li>Tell someone where you're going</li>
+                    <li>Trust your instincts</li>
+                </ul>
+                <p>We're not responsible for other users' conduct, online or offline.</p>
+            </div>
+
+            <h2>6. Recommendations</h2>
+            
+            <p>Our recommendations are AI-generated suggestions. We don't guarantee:</p>
+            <ul>
+                <li>Quality, safety, or availability of venues</li>
+                <li>Accuracy of venue information (hours, prices, menus)</li>
+                <li>Your experience at third-party venues</li>
+            </ul>
+            <p>Always verify important details directly with venues.</p>
+
+            <h2>7. Navigation</h2>
+            
+            <div class="warning-box">
+                <p><strong>Driving Safety:</strong></p>
+                <ul>
+                    <li>Maps may not be 100% accurate</li>
+                    <li>Always follow traffic laws</li>
+                    <li>Use your own judgment while driving</li>
+                    <li>Don't use the app while driving — have a passenger navigate</li>
+                </ul>
+                <p>We're not responsible for accidents or injuries during navigation.</p>
+            </div>
+
+            <h2>8. Intellectual Property</h2>
+            
+            <p>The app design, features, content, and code belong to Elda Loop LLC. Don't copy, modify, distribute, sell, or lease any part without permission.</p>
+
+            <h2>9. Disclaimers</h2>
+            
+            <div class="legal-note">
+                THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. WE DON'T GUARANTEE UNINTERRUPTED, ERROR-FREE, OR SECURE OPERATION.
+            </div>
+
+            <h2>10. Limitation of Liability</h2>
+            
+            <div class="legal-note">
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, ELDA LOOP LLC IS NOT LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES. TOTAL LIABILITY IS LIMITED TO AMOUNTS PAID IN THE PAST 12 MONTHS OR $100, WHICHEVER IS GREATER.
+            </div>
+
+            <h2>11. Indemnification</h2>
+            
+            <p>You agree to indemnify Elda Loop LLC from claims arising from your use of the app, your content, or your violation of these terms.</p>
+
+            <h2>12. Termination</h2>
+            
+            <p>You can delete your account anytime. We may suspend or terminate accounts for violations without notice.</p>
+
+            <h2>13. Changes</h2>
+            
+            <p>We may update these terms. We'll notify you of material changes. Continued use means acceptance.</p>
+
+            <h2>14. Governing Law</h2>
+            
+            <p>These terms are governed by Delaware law. Disputes go to binding arbitration. No class actions.</p>
+
+            <h2>15. Contact</h2>
+            
+            <p>
+                Elda Loop LLC<br>
+                <a href="mailto:legal@eldaloop.com">legal@eldaloop.com</a><br>
+                <a href="mailto:hello@eldaloop.com">hello@eldaloop.com</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/articles">Articles</a>
+                <a href="mailto:hello@eldaloop.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
