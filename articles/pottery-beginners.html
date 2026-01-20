@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Pottery: A Beginner's Guide — Elda Loop</title>
+    <meta name="description" content="Thinking about trying pottery? Here's everything you need to know to get your hands dirty.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --purple: #8B5CF6;
+            --purple-light: #A78BFA;
+            --purple-glow: #C4B5FD;
+            --purple-dark: #6D28D9;
+            --teal: #3DBDA8;
+            --teal-light: #5EEAD4;
+            --teal-dark: #2A9D8F;
+            --dark: #0D0A14;
+            --dark-light: #1A1525;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 18px 0;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(13, 10, 20, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        header .container {
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo svg { width: 42px; height: 42px; }
+
+        .logo span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--teal-light); }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 42px;
+            height: 42px;
+            background: rgba(139, 92, 246, 0.12);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--purple-light);
+            border-radius: 2px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 78px;
+            left: 0; right: 0;
+            background: rgba(13, 10, 20, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            z-index: 99;
+        }
+
+        .mobile-menu.active { display: block; }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        article {
+            padding: 140px 0 80px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--teal-light); }
+
+        .article-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 100px;
+            background: rgba(61, 189, 168, 0.15);
+            color: var(--teal-light);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(32px, 5vw, 44px);
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            color: var(--purple-glow);
+            font-size: 15px;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin: 48px 0 20px;
+            color: var(--teal-light);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 32px 0 12px;
+            color: var(--white);
+        }
+
+        p {
+            margin-bottom: 24px;
+            color: var(--purple-glow);
+        }
+
+        p.lead {
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        strong { color: var(--white); }
+        em { color: var(--teal-light); font-style: italic; }
+
+        ul, ol {
+            margin: 0 0 24px 24px;
+            color: var(--purple-glow);
+        }
+
+        li { margin-bottom: 12px; }
+
+        .highlight-box {
+            background: var(--dark-light);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 92, 246, 0.12);
+        }
+
+        footer .container {
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-links a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover { color: var(--teal-light); }
+
+        .footer-copy {
+            color: var(--purple-glow);
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: flex; }
+            footer .container { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <svg viewBox="0 0 100 100" fill="none">
+                    <g transform="translate(5, 10) scale(0.9)">
+                        <path d="M75 35 C82 38, 85 45, 80 52 C75 58, 65 58, 55 55 C40 50, 25 55, 12 70 C8 75, 5 80, 3 82 L8 72 C6 76, 4 79, 2 82 L10 68 C20 55, 35 48, 50 48 C60 48, 70 42, 75 35Z" fill="#3DBDA8"/>
+                        <ellipse cx="68" cy="48" rx="12" ry="8" fill="#2A9D8F" transform="rotate(-15 68 48)"/>
+                        <circle cx="78" cy="42" r="5" fill="#F3F0FF"/>
+                    </g>
+                </svg>
+                <span>Elda Loop</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="/articles">Articles</a>
+                <a href="/#download">Download</a>
+            </nav>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/articles">Articles</a>
+        <a href="/#download">Download</a>
+    </div>
+
+    <article>
+        <div class="container">
+            <a href="/articles" class="back-link">← Back to Articles</a>
+
+            <span class="article-tag">Hobbies</span>
+            <h1>Getting Started with Pottery: A Beginner's Guide</h1>
+            <p class="article-meta">6 min read · January 2026</p>
+
+            <p class="lead">You've seen the Instagram videos. Someone's hands covered in clay, a bowl slowly forming on a spinning wheel, everything looking impossibly serene and artistic. You think: "I want to do that." Then you think: "But I'd probably be terrible at it."</p>
+
+            <p>Good news: you will definitely be terrible at it. At first. Everyone is. That's actually part of what makes it great.</p>
+
+            <p>Pottery is one of those rare activities that forces you to be present. You can't scroll while your hands are covered in wet clay. You can't multitask. It's just you and this spinning lump of earth, and if you lose focus for even a second, the whole thing collapses into a sad pancake.</p>
+
+            <p>Which sounds stressful, but is actually incredibly freeing. For a few hours, your brain has exactly one thing to think about. In a world of infinite tabs, that's practically a spa day.</p>
+
+            <h2>What kind of pottery should you start with?</h2>
+
+            <p>There are two main paths: <strong>wheel throwing</strong> and <strong>hand building</strong>. They're very different vibes.</p>
+
+            <h3>Wheel throwing</h3>
+            <p>This is the iconic one. The spinning wheel, the clay rising through your hands, the meditation of it all. It's also significantly harder than it looks. Like, a lot harder. Most people spend their first several sessions just trying to center the clay on the wheel, which is surprisingly difficult and surprisingly humbling.</p>
+
+            <p>But when it works? When you actually pull up a wall and shape something that looks vaguely like a vessel? It's a genuinely magical feeling. And that difficulty is part of the appeal. Wheel throwing rewards patience and practice in a way that feels increasingly rare.</p>
+
+            <h3>Hand building</h3>
+            <p>This covers everything that doesn't involve a wheel: pinch pots, coiling, slab building. It's more accessible for beginners because there's no spinning wheel to master, but it's not lesser — it's just different. Some of the most beautiful ceramics in the world are hand-built.</p>
+
+            <p>Hand building is more forgiving and arguably more creative. You can make weird shapes. Sculptures. Things that don't have to be round. If you're the type who wants to express yourself before you've mastered technique, hand building might be your path.</p>
+
+            <div class="highlight-box">
+                <p><strong>My recommendation:</strong> Try both if you can. Many intro classes include both methods. But if you have to pick one, start with hand building to get comfortable with clay, then move to the wheel once you're hooked.</p>
+            </div>
+
+            <h2>How to actually start</h2>
+
+            <p>You have options:</p>
+
+            <h3>Take a class at a local studio</h3>
+            <p>This is the best way for most people. Studios have wheels, kilns, glazes, and instructors who can prevent you from making the same mistakes everyone makes. Most cities have multiple options — community centers, art schools, independent studios.</p>
+
+            <p>Look for "intro to ceramics" or "wheel throwing for beginners" classes. These usually run 6-8 weeks and include materials. Yes, they cost money, but consider what you're getting: equipment that would cost thousands to buy, expert guidance, and a space to work. It's actually a good deal.</p>
+
+            <h3>Try a one-time workshop</h3>
+            <p>If you're not ready to commit to a full class, many studios offer single-session workshops where you can make one piece and see if you like it. Great for testing the waters. Just know that one session won't really teach you pottery — it'll give you a taste.</p>
+
+            <h3>Community studios and memberships</h3>
+            <p>Once you've taken an intro class, you might want access to equipment without paying for ongoing instruction. Many studios offer memberships where you can come in and work independently. This is the next step for people who catch the bug.</p>
+
+            <h2>What to expect in your first class</h2>
+
+            <p>You will make something ugly. Probably several somethings. This is correct and normal.</p>
+
+            <p>Here's roughly how it goes:</p>
+
+            <ul>
+                <li><strong>First session:</strong> Learning to wedge clay (like kneading bread) and basic techniques. If you're on the wheel, probably just trying to center clay. You'll be surprised how physical it is.</li>
+                <li><strong>Next few sessions:</strong> Actually making things, though they'll be wonky. Learning to trim, handle, and refine pieces.</li>
+                <li><strong>Later sessions:</strong> Glazing and finishing. This is where your lumpy bowl becomes a lumpy bowl with color.</li>
+                <li><strong>Final session:</strong> Getting your fired pieces back and being either delighted or confused by what the kiln did to them.</li>
+            </ul>
+
+            <p>The gap between what you envision and what you make will be enormous. Accept this. It's part of the process. Even experienced potters are constantly surprised by results.</p>
+
+            <h2>What to wear</h2>
+
+            <p>Clay gets everywhere. Wear:</p>
+            <ul>
+                <li>Clothes you don't care about (old t-shirt, jeans that can get dirty)</li>
+                <li>Short sleeves or sleeves you can push up past your elbows</li>
+                <li>No rings, bracelets, or watches</li>
+                <li>Closed-toe shoes (clay on bare feet is unpleasant)</li>
+                <li>An apron if you have one, though studios usually provide these</li>
+            </ul>
+
+            <p>Tie back long hair. Clay in hair is a whole situation.</p>
+
+            <h2>The honest truth about getting good</h2>
+
+            <p>Pottery has a steep learning curve, especially wheel throwing. It takes most people several months of regular practice to make things they're genuinely proud of. Some things that seem simple — like pulling an even wall, centering consistently, or attaching a handle — take hundreds of repetitions to master.</p>
+
+            <p>This isn't meant to discourage you. It's meant to set expectations. If you walk in thinking you'll make beautiful mugs on day one, you'll be frustrated. If you walk in expecting to struggle, fail, and slowly improve, you'll find it deeply satisfying.</p>
+
+            <p>Also: the "failures" often become your favorites. That bowl that collapsed weirdly? Interesting. That cup with the fingerprints visible? Character. Perfection is overrated in ceramics.</p>
+
+            <h2>Why it's worth trying</h2>
+
+            <p>Beyond the practical joy of making things you can actually use, pottery offers something increasingly rare: a reason to put your phone away and focus on one thing. It's physical in a way that most of our lives aren't. It connects you to a craft humans have practiced for thousands of years.</p>
+
+            <p>And there's something profound about making a cup and then drinking coffee from it. You made that. It exists because you sat down and made it with your hands. In a world of mass production and digital everything, that feels almost revolutionary.</p>
+
+            <p>So sign up for a class. Get clay under your fingernails. Make something terrible and love it anyway.</p>
+
+            <p>And stop reading articles about doing things. Go do the thing.</p>
+
+            <a href="/articles" class="back-link" style="margin-top: 48px;">← Back to Articles</a>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/articles">Articles</a>
+                <a href="mailto:hello@eldaloop.com">Contact</a>
+            </div>
+            <p class="footer-copy">© 2026 Elda Loop LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

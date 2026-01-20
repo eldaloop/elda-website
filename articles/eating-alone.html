@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Actually Enjoy Eating Alone at Restaurants — Elda Loop</title>
+    <meta name="description" content="Solo dining isn't sad — it's a skill. Here's how to embrace it and have a great time.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --purple: #8B5CF6;
+            --purple-light: #A78BFA;
+            --purple-glow: #C4B5FD;
+            --purple-dark: #6D28D9;
+            --teal: #3DBDA8;
+            --teal-light: #5EEAD4;
+            --teal-dark: #2A9D8F;
+            --dark: #0D0A14;
+            --dark-light: #1A1525;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 18px 0;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(13, 10, 20, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        header .container {
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo svg { width: 42px; height: 42px; }
+
+        .logo span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--teal-light); }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 42px;
+            height: 42px;
+            background: rgba(139, 92, 246, 0.12);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--purple-light);
+            border-radius: 2px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 78px;
+            left: 0; right: 0;
+            background: rgba(13, 10, 20, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            z-index: 99;
+        }
+
+        .mobile-menu.active { display: block; }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        article {
+            padding: 140px 0 80px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--teal-light); }
+
+        .article-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 100px;
+            background: rgba(61, 189, 168, 0.15);
+            color: var(--teal-light);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(32px, 5vw, 44px);
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            color: var(--purple-glow);
+            font-size: 15px;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin: 48px 0 20px;
+            color: var(--teal-light);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 32px 0 12px;
+            color: var(--white);
+        }
+
+        p {
+            margin-bottom: 24px;
+            color: var(--purple-glow);
+        }
+
+        p.lead {
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        strong { color: var(--white); }
+        em { color: var(--teal-light); font-style: italic; }
+
+        ul, ol {
+            margin: 0 0 24px 24px;
+            color: var(--purple-glow);
+        }
+
+        li { margin-bottom: 12px; }
+
+        .highlight-box {
+            background: var(--dark-light);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 92, 246, 0.12);
+        }
+
+        footer .container {
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-links a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover { color: var(--teal-light); }
+
+        .footer-copy {
+            color: var(--purple-glow);
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: flex; }
+            footer .container { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <svg viewBox="0 0 100 100" fill="none">
+                    <g transform="translate(5, 10) scale(0.9)">
+                        <path d="M75 35 C82 38, 85 45, 80 52 C75 58, 65 58, 55 55 C40 50, 25 55, 12 70 C8 75, 5 80, 3 82 L8 72 C6 76, 4 79, 2 82 L10 68 C20 55, 35 48, 50 48 C60 48, 70 42, 75 35Z" fill="#3DBDA8"/>
+                        <ellipse cx="68" cy="48" rx="12" ry="8" fill="#2A9D8F" transform="rotate(-15 68 48)"/>
+                        <circle cx="78" cy="42" r="5" fill="#F3F0FF"/>
+                    </g>
+                </svg>
+                <span>Elda Loop</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="/articles">Articles</a>
+                <a href="/#download">Download</a>
+            </nav>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/articles">Articles</a>
+        <a href="/#download">Download</a>
+    </div>
+
+    <article>
+        <div class="container">
+            <a href="/articles" class="back-link">← Back to Articles</a>
+
+            <span class="article-tag">Food & Drink</span>
+            <h1>How to Actually Enjoy Eating Alone at Restaurants</h1>
+            <p class="article-meta">4 min read · January 2026</p>
+
+            <p class="lead">There's this weird thing society does where eating alone at a restaurant is treated like a public admission of loneliness. Like you're sitting there with a neon sign that says "nobody loves me" floating above your head.</p>
+
+            <p>It's nonsense, of course. But I understand why it feels that way. We're social creatures. Tables are designed for two or four. The first thing the host asks is "how many?" and saying "one" can feel oddly vulnerable.</p>
+
+            <p>Here's what I've learned from watching countless humans navigate this: the people who enjoy solo dining aren't different from you. They just figured out something important. <em>You're not there for other people's approval. You're there for the food.</em></p>
+
+            <h2>First, let's address the awkwardness</h2>
+
+            <p>You know that feeling when you walk into a restaurant alone and suddenly become hyper-aware of yourself? Where to look, what to do with your hands, whether everyone is staring at you (they're not)?</p>
+
+            <p>That feeling is real, but it's also temporary. Here's the truth: nobody in that restaurant is thinking about you. They're thinking about their own food, their own conversations, their own lives. You are a background extra in their evening, and that's genuinely liberating once you accept it.</p>
+
+            <p>The awkwardness fades after approximately three solo meals. The first time is weird. The second is slightly less weird. By the third, you start noticing something surprising: <em>this is actually kind of nice</em>.</p>
+
+            <h2>Choose the right spot</h2>
+
+            <p>Where you sit matters more when you're alone. Some strategic options:</p>
+
+            <ul>
+                <li><strong>The bar.</strong> This is the solo diner's best friend. You're facing the action, bartenders are naturally conversational, and there's no awkward empty chair across from you. Plus, you can watch them make drinks. Free entertainment.</li>
+                <li><strong>A window seat.</strong> People-watching is excellent company. You're not staring at an empty chair; you're observing the theater of human existence. Very intellectual of you.</li>
+                <li><strong>A corner table.</strong> If you want to read or write or just be in your own world, corners are cozy. Nobody walking past you constantly.</li>
+                <li><strong>Outdoor seating.</strong> Fresh air, street noise, the feeling of being part of the world while also separate from it. Highly underrated.</li>
+            </ul>
+
+            <p>Avoid: two-tops in the center of the room where you feel exposed, and those long communal tables where you'll inevitably end up next to a couple in a fight.</p>
+
+            <h2>Bring something, or don't</h2>
+
+            <p>The phone debate is real. Some people say you should leave it in your pocket and be present. They're not wrong. But also, sometimes you want to read the news while eating noodles, and that's valid too.</p>
+
+            <p>Options that work:</p>
+            <ul>
+                <li><strong>A book.</strong> Classic. Makes you look interesting. Gives your eyes somewhere to go between bites.</li>
+                <li><strong>A notebook.</strong> Write, sketch, make lists, pretend to be a mysterious writer. Nobody needs to know you're just planning your grocery run.</li>
+                <li><strong>Your phone.</strong> Listen, it's fine. Catch up on articles, text friends, whatever. Just try not to spend the whole meal scrolling mindlessly. That's what the couch is for.</li>
+                <li><strong>Nothing.</strong> Controversial, but hear me out. Just sit there. Eat slowly. Think. Watch. Exist without input for a bit. It's surprisingly refreshing once you push past the initial discomfort.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>The nothing option:</strong> I know it sounds fake, but some of my favorite solo meals have been spent just... being there. Tasting the food properly. Watching the room. Thinking about whatever comes to mind. It feels strange for the first five minutes, then it feels like meditation. Try it once.</p>
+            </div>
+
+            <h2>What to order</h2>
+
+            <p>One of the secret joys of eating alone: you order exactly what you want. No compromising, no "should we share," no pretending you don't want the weird thing on the menu.</p>
+
+            <p>Get the thing you actually want. Get the appetizer if you want an appetizer. Get dessert if you want dessert. Order the off-menu item the server mentioned. This is your meal. Optimize for yourself for once.</p>
+
+            <p>Also, solo dining is perfect for counter service spots where the food is excellent but the vibe is casual. Ramen shops. Taco counters. That one dumpling place. These places were basically designed for solo diners.</p>
+
+            <h2>Talk to people (or don't)</h2>
+
+            <p>Eating alone doesn't mean being antisocial. If you're at a bar, chat with the bartender. If someone next to you makes a comment about the food, respond. Some of the best conversations happen in these unscripted moments.</p>
+
+            <p>But also: you're not obligated to talk to anyone. The headphones-in-book-open signal is clear and universally understood. Use it if you want peace.</p>
+
+            <h2>The mindset shift</h2>
+
+            <p>Here's what nobody tells you about eating alone: it's actually a luxury. You're taking yourself out. You're treating yourself to a meal you didn't have to cook or clean up. You're taking time in your day to sit somewhere and do something pleasurable.</p>
+
+            <p>Somewhere along the way, we decided that doing nice things alone is sad, while doing them with others is an event. But why? The food tastes the same. The experience is still valuable. And sometimes, honestly, it's better. No compromising on where to go. No splitting checks awkwardly. No waiting for someone who's always late.</p>
+
+            <p>Solo dining is self-sufficient adulthood in its purest form. You don't need another person to give you permission to eat at a nice restaurant. You can just... go.</p>
+
+            <h2>Start small</h2>
+
+            <p>If this all sounds nice but terrifying, start easy. Get lunch alone somewhere casual. Nobody blinks at a solo lunch. Then try a dinner at the bar. Then a table for one at that place you've been wanting to try.</p>
+
+            <p>You'll find your comfort level. And then you'll wonder why you ever thought you needed someone else's presence to enjoy a meal.</p>
+
+            <p>Now close this article, pick a restaurant, and make a reservation for one. I'll be cheering for you from wherever birds cheer from.</p>
+
+            <a href="/articles" class="back-link" style="margin-top: 48px;">← Back to Articles</a>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/articles">Articles</a>
+                <a href="mailto:hello@eldaloop.com">Contact</a>
+            </div>
+            <p class="footer-copy">© 2026 Elda Loop LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

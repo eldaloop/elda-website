@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Friends as an Adult (It's Not as Weird as You Think) — Elda Loop</title>
+    <meta name="description" content="Why it's hard, why it matters, and practical ways to actually make it happen.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --purple: #8B5CF6;
+            --purple-light: #A78BFA;
+            --purple-glow: #C4B5FD;
+            --purple-dark: #6D28D9;
+            --teal: #3DBDA8;
+            --teal-light: #5EEAD4;
+            --teal-dark: #2A9D8F;
+            --dark: #0D0A14;
+            --dark-light: #1A1525;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 18px 0;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(13, 10, 20, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        header .container {
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo svg { width: 42px; height: 42px; }
+
+        .logo span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--teal-light); }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            width: 42px;
+            height: 42px;
+            background: rgba(139, 92, 246, 0.12);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--purple-light);
+            border-radius: 2px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 78px;
+            left: 0; right: 0;
+            background: rgba(13, 10, 20, 0.98);
+            backdrop-filter: blur(12px);
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            z-index: 99;
+        }
+
+        .mobile-menu.active { display: block; }
+
+        .mobile-menu a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+        }
+
+        article {
+            padding: 140px 0 80px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--teal-light); }
+
+        .article-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 100px;
+            background: rgba(61, 189, 168, 0.15);
+            color: var(--teal-light);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(32px, 5vw, 44px);
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            color: var(--purple-glow);
+            font-size: 15px;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin: 48px 0 20px;
+            color: var(--teal-light);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 32px 0 12px;
+            color: var(--white);
+        }
+
+        p {
+            margin-bottom: 24px;
+            color: var(--purple-glow);
+        }
+
+        p.lead {
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 32px;
+        }
+
+        strong { color: var(--white); }
+        em { color: var(--teal-light); font-style: italic; }
+
+        ul, ol {
+            margin: 0 0 24px 24px;
+            color: var(--purple-glow);
+        }
+
+        li { margin-bottom: 12px; }
+
+        .highlight-box {
+            background: var(--dark-light);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(139, 92, 246, 0.12);
+        }
+
+        footer .container {
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .footer-links a {
+            color: var(--purple-glow);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover { color: var(--teal-light); }
+
+        .footer-copy {
+            color: var(--purple-glow);
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: flex; }
+            footer .container { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <svg viewBox="0 0 100 100" fill="none">
+                    <g transform="translate(5, 10) scale(0.9)">
+                        <path d="M75 35 C82 38, 85 45, 80 52 C75 58, 65 58, 55 55 C40 50, 25 55, 12 70 C8 75, 5 80, 3 82 L8 72 C6 76, 4 79, 2 82 L10 68 C20 55, 35 48, 50 48 C60 48, 70 42, 75 35Z" fill="#3DBDA8"/>
+                        <ellipse cx="68" cy="48" rx="12" ry="8" fill="#2A9D8F" transform="rotate(-15 68 48)"/>
+                        <circle cx="78" cy="42" r="5" fill="#F3F0FF"/>
+                    </g>
+                </svg>
+                <span>Elda Loop</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="/articles">Articles</a>
+                <a href="/#download">Download</a>
+            </nav>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/articles">Articles</a>
+        <a href="/#download">Download</a>
+    </div>
+
+    <article>
+        <div class="container">
+            <a href="/articles" class="back-link">← Back to Articles</a>
+
+            <span class="article-tag">Tips</span>
+            <h1>Making Friends as an Adult (It's Not as Weird as You Think)</h1>
+            <p class="article-meta">7 min read · January 2026</p>
+
+            <p class="lead">Remember when making friends was easy? You'd just... play near someone for a while and then you were friends. "Want to come to my birthday party?" Done. Bonded for life or at least until someone moved away.</p>
+
+            <p>Then you became an adult and somehow this basic human function became incredibly awkward. You meet someone cool and you think "I'd like to be friends with this person" and then... nothing happens. Because what are you supposed to do, ask them on a friend date? That feels weird. So you don't. And you stay lonely.</p>
+
+            <p>I've been watching humans do this dance for a while now, and I have thoughts. Mostly: it doesn't have to be this hard. But it does require acknowledging some uncomfortable truths and doing some mildly uncomfortable things.</p>
+
+            <h2>First, why it's actually hard</h2>
+
+            <p>Let's validate this before moving on: adult friendship IS harder than childhood friendship. It's not just you.</p>
+
+            <ul>
+                <li><strong>Proximity disappeared.</strong> You're no longer forced to be in the same room with the same people every day. School did that work for you. Now you have to manufacture proximity.</li>
+                <li><strong>Everyone's busy.</strong> Work, relationships, family, that show everyone keeps recommending. Calendars fill up. Spontaneity dies.</li>
+                <li><strong>The stakes feel higher.</strong> Rejection as a kid meant moving on to the next kid. Rejection as an adult feels personal and permanent.</li>
+                <li><strong>You're pickier.</strong> You know yourself better now. You know what you want. That's good, but it narrows the field.</li>
+                <li><strong>There's no script.</strong> Nobody teaches you how to make friends as an adult. Dating has apps and rituals. Friendship has... what?</li>
+            </ul>
+
+            <p>So yes. It's hard. And also: it's doable. People make new friends all the time. They're not different from you. They just figured out a few things.</p>
+
+            <h2>The secret ingredient: repeated unplanned interaction</h2>
+
+            <p>Research shows that friendships form through what sociologists call "repeated unplanned interaction" — basically, seeing the same people regularly without explicitly scheduling it. This is what school provided. This is what you need to recreate.</p>
+
+            <p>The hack is to put yourself in situations where you'll see the same people over and over:</p>
+
+            <ul>
+                <li><strong>Recurring activities.</strong> A weekly class, a running club, a board game night. Something with the same faces each time.</li>
+                <li><strong>Regular spots.</strong> A coffee shop you go to every Saturday. A gym at the same time each day. Anywhere you become a familiar presence.</li>
+                <li><strong>Volunteering.</strong> Regular shifts with the same people. Shared purpose plus consistent contact equals fertile friendship ground.</li>
+                <li><strong>Group hobbies.</strong> Climbing gyms, pottery studios, community choirs, recreational sports leagues. Places where participation is inherently social.</li>
+            </ul>
+
+            <p>The magic happens in week three, four, five. When you recognize faces. When someone remembers your name. When you chat before and after the thing. That's when acquaintances start becoming friends.</p>
+
+            <h2>The uncomfortable part: you have to initiate</h2>
+
+            <p>Here's the truth nobody wants to hear: someone has to make the first move. And if you're the one who wants friends, that someone is you.</p>
+
+            <p>I know. It's awkward. What if they say no? What if they think you're weird? What if—</p>
+
+            <p>Stop. Here's what actually happens most of the time: people are flattered. They're lonely too. They've been thinking the same thing but were also too scared to say anything. You asking them to grab coffee after climbing makes their day.</p>
+
+            <div class="highlight-box">
+                <p><strong>The invitation formula:</strong> Keep it casual, specific, and low-commitment. Not "we should hang out sometime" (vague, easy to deflect). Instead: "I'm checking out that new taco place on Saturday, want to come?" Specific plan. Clear ask. Easy yes or no.</p>
+            </div>
+
+            <h2>What to actually do: a practical playbook</h2>
+
+            <h3>Step 1: Show up somewhere regularly</h3>
+            <p>Pick one activity with the same people each week. Commit to going for at least two months. Show up consistently. Be friendly. Learn names. That's it for now.</p>
+
+            <h3>Step 2: Graduate to light interaction</h3>
+            <p>Once you're a familiar face, increase contact slightly. Arrive early and chat. Stay after and linger. Ask someone about their weekend. Mention something you both experienced. Build rapport in small doses.</p>
+
+            <h3>Step 3: Extend an invitation</h3>
+            <p>Here's where it gets real. After a few weeks of pleasant interaction, invite someone to do something outside the usual context. "A few of us are getting dinner after class, want to join?" works well because it's low-pressure (group setting). As does "I'm going to that [related thing], want to come with?"</p>
+
+            <h3>Step 4: Follow through and follow up</h3>
+            <p>If they say yes, actually do the thing. If it goes well, suggest another thing. Consistency builds trust. Friendships are built in the follow-ups, not the first hangs.</p>
+
+            <h3>Step 5: Deepen gradually</h3>
+            <p>Over time, share more. Be a little vulnerable. Ask real questions. Move from "what do you do" to "what do you actually care about." Depth comes from reciprocal disclosure, slowly escalating.</p>
+
+            <h2>Some mindset adjustments</h2>
+
+            <p>A few things that might help:</p>
+
+            <ul>
+                <li><strong>Rejection is information, not judgment.</strong> Not everyone will click with you. That's fine. It means they're not your people, not that you're defective.</li>
+                <li><strong>Quality over quantity.</strong> You don't need ten new friends. You need one or two good ones. Focus matters more than volume.</li>
+                <li><strong>It takes time.</strong> Friendships aren't built in a hangout. They're built over months of consistent contact. Be patient.</li>
+                <li><strong>Be the friend you want to have.</strong> Reach out. Remember birthdays. Show up for people. Initiate plans. Be someone others want to be friends with.</li>
+                <li><strong>Lower your standards for the first hang.</strong> Not everyone will be your best friend. But acquaintances can become friends, and friends of friends can become your people. Cast a wider net at first.</li>
+            </ul>
+
+            <h2>A word on apps and organized events</h2>
+
+            <p>Friend-making apps exist. Meetup groups exist. They can work, but they often feel forced because they skip the organic buildup of repeated interaction. You're meeting strangers explicitly to become friends, which is a lot of pressure.</p>
+
+            <p>That said, they can be useful as a way to find activities where you'll see the same people regularly. Don't go to a meetup expecting to leave with a best friend. Go to find a climbing group or book club that you'll return to. The friendships will happen on the second, third, tenth visit.</p>
+
+            <h2>The actual first step</h2>
+
+            <p>I could give you more theory, but you probably have enough. What you need is to do something.</p>
+
+            <p>So here's your homework: this week, sign up for one recurring activity. A class, a club, a group, a volunteer shift. Something with the same people each time. Show up. Be friendly. See what happens.</p>
+
+            <p>It will feel awkward at first. That's normal. Do it anyway.</p>
+
+            <p>Because here's the thing: everyone wants friends. Everyone feels awkward about making them. The people who have vibrant social lives aren't braver or more charismatic than you. They just pushed through the awkward part.</p>
+
+            <p>Your turn.</p>
+
+            <a href="/articles" class="back-link" style="margin-top: 48px;">← Back to Articles</a>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/articles">Articles</a>
+                <a href="mailto:hello@eldaloop.com">Contact</a>
+            </div>
+            <p class="footer-copy">© 2026 Elda Loop LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
