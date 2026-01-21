@@ -14,13 +14,14 @@
         :root {
             --purple: #8B5CF6;
             --purple-light: #A78BFA;
-            --purple-glow: #C4B5FD;
             --purple-dark: #6D28D9;
             --teal: #3DBDA8;
             --teal-light: #5EEAD4;
             --teal-dark: #2A9D8F;
-            --dark: #0D0A14;
-            --dark-light: #1A1525;
+            --dark: #121212;
+            --dark-light: #1E1E1E;
+            --text: #E0E0E0;
+            --text-muted: #A0A0A0;
             --white: #ffffff;
         }
 
@@ -45,9 +46,9 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            background: rgba(13, 10, 20, 0.9);
+            background: rgba(18, 18, 18, 0.9);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         header .container {
@@ -79,7 +80,7 @@
         }
 
         .nav-links a {
-            color: var(--purple-glow);
+            color: var(--text);
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
@@ -95,7 +96,7 @@
             gap: 5px;
             width: 42px;
             height: 42px;
-            background: rgba(139, 92, 246, 0.12);
+            background: rgba(255, 255, 255, 0.1);
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -115,10 +116,10 @@
             position: fixed;
             top: 78px;
             left: 0; right: 0;
-            background: rgba(13, 10, 20, 0.98);
+            background: rgba(18, 18, 18, 0.98);
             backdrop-filter: blur(12px);
             padding: 20px 24px;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 99;
         }
 
@@ -131,7 +132,7 @@
             font-size: 17px;
             font-weight: 500;
             padding: 14px 0;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         article {
@@ -142,7 +143,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--purple-glow);
+            color: var(--text);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
@@ -174,11 +175,11 @@
         }
 
         .article-meta {
-            color: var(--purple-glow);
+            color: var(--text);
             font-size: 15px;
             margin-bottom: 48px;
             padding-bottom: 32px;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         h2 {
@@ -198,7 +199,7 @@
 
         p {
             margin-bottom: 24px;
-            color: var(--purple-glow);
+            color: var(--text);
         }
 
         p.lead {
@@ -212,7 +213,7 @@
 
         ul, ol {
             margin: 0 0 24px 24px;
-            color: var(--purple-glow);
+            color: var(--text);
         }
 
         li { margin-bottom: 12px; }
@@ -222,14 +223,14 @@
             border-radius: 16px;
             padding: 24px;
             margin: 32px 0;
-            border: 1px solid rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .highlight-box p:last-child { margin-bottom: 0; }
 
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(139, 92, 246, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         footer .container {
@@ -247,7 +248,7 @@
         }
 
         .footer-links a {
-            color: var(--purple-glow);
+            color: var(--text);
             text-decoration: none;
             font-size: 14px;
         }
@@ -255,7 +256,7 @@
         .footer-links a:hover { color: var(--teal-light); }
 
         .footer-copy {
-            color: var(--purple-glow);
+            color: var(--text);
             font-size: 13px;
             opacity: 0.6;
         }
@@ -310,7 +311,7 @@
 
             <p>It's nonsense, of course. But I understand why it feels that way. We're social creatures. Tables are designed for two or four. The first thing the host asks is "how many?" and saying "one" can feel oddly vulnerable.</p>
 
-            <p>Here's what I've learned from watching countless humans navigate this: the people who enjoy solo dining aren't different from you. They just figured out something important. <em>You're not there for other people's approval. You're there for the food.</em></p>
+            <p>Here's what I've figured out after a lot of solo meals: the people who enjoy solo dining aren't different from you. They just figured out something important. <em>You're not there for other people's approval. You're there for the food.</em></p>
 
             <h2>First, let's address the awkwardness</h2>
 

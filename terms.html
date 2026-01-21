@@ -13,51 +13,53 @@
         :root {
             --purple: #8B5CF6;
             --purple-light: #A78BFA;
-            --purple-glow: #C4B5FD;
             --purple-dark: #6D28D9;
             --teal: #3DBDA8;
             --teal-light: #5EEAD4;
             --yellow: #FBBF24;
-            --dark: #0D0A14;
-            --dark-light: #1A1525;
+            --dark: #121212;
+            --dark-light: #1E1E1E;
+            --text: #E0E0E0;
+            --text-muted: #A0A0A0;
             --white: #ffffff;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--dark);
-            color: var(--white);
+            color: var(--text);
             font-size: 16px;
             line-height: 1.8;
         }
         .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        
+
         header {
             padding: 18px 0;
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            background: rgba(13, 10, 20, 0.9);
+            background: rgba(18, 18, 18, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         header .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); }
         .logo svg { width: 42px; height: 42px; }
         .logo span { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; }
-        .back-link { color: var(--purple-glow); text-decoration: none; font-size: 14px; }
+        .back-link { color: var(--text); text-decoration: none; font-size: 14px; }
         .back-link:hover { color: var(--teal-light); }
-        
+
         main { padding: 140px 0 80px; }
-        
+
         h1 {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 8px;
+            color: var(--white);
         }
-        .last-updated { color: var(--purple-glow); font-size: 14px; margin-bottom: 40px; opacity: 0.7; }
-        
+        .last-updated { color: var(--text-muted); font-size: 14px; margin-bottom: 40px; }
+
         h2 {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 22px;
@@ -65,14 +67,14 @@
             margin: 48px 0 16px;
             color: var(--teal-light);
         }
-        p { margin-bottom: 16px; color: var(--purple-glow); }
+        p { margin-bottom: 16px; color: var(--text); }
         strong { color: var(--white); }
         ul, ol { margin: 16px 0; padding-left: 24px; }
-        li { margin-bottom: 10px; color: var(--purple-glow); }
+        li { margin-bottom: 10px; color: var(--text); }
         li::marker { color: var(--teal); }
         a { color: var(--teal-light); }
         a:hover { color: var(--teal); }
-        
+
         .warning-box {
             background: rgba(251, 191, 36, 0.08);
             border: 1px solid rgba(251, 191, 36, 0.3);
@@ -81,25 +83,24 @@
             margin: 24px 0;
         }
         .warning-box strong { color: var(--yellow); }
-        
+
         .legal-note {
             background: var(--dark-light);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 20px;
             margin: 24px 0;
             font-size: 14px;
-            color: var(--purple-glow);
-            opacity: 0.8;
+            color: var(--text-muted);
         }
-        
+
         footer {
             padding: 32px 0;
-            border-top: 1px solid rgba(139, 92, 246, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         footer .container { max-width: 1200px; }
         .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
-        .footer-links a { color: var(--purple-glow); text-decoration: none; font-size: 14px; }
+        .footer-links a { color: var(--text); text-decoration: none; font-size: 14px; }
         .footer-links a:hover { color: var(--teal-light); }
     </style>
 </head>
@@ -128,11 +129,11 @@
             <p>Welcome to Elda Loop. These Terms govern your use of our app. By using Elda Loop, you agree to these terms.</p>
 
             <h2>1. Eligibility</h2>
-            
+
             <p>You must be <strong>at least 18 years old</strong> to use Elda Loop. By creating an account, you confirm you meet this requirement.</p>
 
             <h2>2. Your Account</h2>
-            
+
             <ul>
                 <li>Provide accurate, current information</li>
                 <li>Keep your password secure</li>
@@ -142,7 +143,7 @@
             <p>We may suspend accounts that violate these terms or contain false information.</p>
 
             <h2>3. Acceptable Use</h2>
-            
+
             <p>Please don't:</p>
             <ul>
                 <li>Use the app for illegal purposes</li>
@@ -158,13 +159,13 @@
             </ul>
 
             <h2>4. Your Content</h2>
-            
+
             <p>Content you post (photos, bio, messages) remains yours. By posting, you grant us a license to display it in the app. Make sure you have rights to anything you share.</p>
-            
+
             <p>We may remove content that violates these terms.</p>
 
             <h2>5. Meeting Other Users</h2>
-            
+
             <div class="warning-box">
                 <p><strong>Important:</strong> We don't verify user identities beyond basic account creation. When meeting people from the app:</p>
                 <ul>
@@ -177,7 +178,7 @@
             </div>
 
             <h2>6. Recommendations</h2>
-            
+
             <p>Our recommendations are AI-generated suggestions. We don't guarantee:</p>
             <ul>
                 <li>Quality, safety, or availability of venues</li>
@@ -187,7 +188,7 @@
             <p>Always verify important details directly with venues.</p>
 
             <h2>7. Navigation</h2>
-            
+
             <div class="warning-box">
                 <p><strong>Driving Safety:</strong></p>
                 <ul>
@@ -200,39 +201,39 @@
             </div>
 
             <h2>8. Intellectual Property</h2>
-            
+
             <p>The app design, features, content, and code belong to Elda Loop LLC. Don't copy, modify, distribute, sell, or lease any part without permission.</p>
 
             <h2>9. Disclaimers</h2>
-            
+
             <div class="legal-note">
                 THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. WE DON'T GUARANTEE UNINTERRUPTED, ERROR-FREE, OR SECURE OPERATION.
             </div>
 
             <h2>10. Limitation of Liability</h2>
-            
+
             <div class="legal-note">
                 TO THE MAXIMUM EXTENT PERMITTED BY LAW, ELDA LOOP LLC IS NOT LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES. TOTAL LIABILITY IS LIMITED TO AMOUNTS PAID IN THE PAST 12 MONTHS OR $100, WHICHEVER IS GREATER.
             </div>
 
             <h2>11. Indemnification</h2>
-            
+
             <p>You agree to indemnify Elda Loop LLC from claims arising from your use of the app, your content, or your violation of these terms.</p>
 
             <h2>12. Termination</h2>
-            
+
             <p>You can delete your account anytime. We may suspend or terminate accounts for violations without notice.</p>
 
             <h2>13. Changes</h2>
-            
+
             <p>We may update these terms. We'll notify you of material changes. Continued use means acceptance.</p>
 
             <h2>14. Governing Law</h2>
-            
+
             <p>These terms are governed by Delaware law. Disputes go to binding arbitration. No class actions.</p>
 
             <h2>15. Contact</h2>
-            
+
             <p>
                 Elda Loop LLC<br>
                 <a href="mailto:legal@eldaloop.com">legal@eldaloop.com</a><br>

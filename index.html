@@ -4,38 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elda Loop — Stop Scrolling. Start Doing.</title>
-    <meta name="description" content="An old bird who's tired of watching you scroll. One plan. Go live.">
-    
+    <meta name="description" content="Too many choices, not enough doing. Elda gives you one perfect plan so you can close the app and go live.">
+
     <meta property="og:title" content="Elda Loop — Stop Scrolling. Start Doing.">
-    <meta property="og:description" content="An old bird who's tired of watching you scroll.">
+    <meta property="og:description" content="Too many choices, not enough doing. One perfect plan. Go live.">
     <meta property="og:type" content="website">
-    
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --purple: #8B5CF6;
             --purple-light: #A78BFA;
-            --purple-glow: #C4B5FD;
             --purple-dark: #6D28D9;
             --teal: #3DBDA8;
             --teal-light: #5EEAD4;
-            --dark: #0D0A14;
-            --dark-light: #1A1525;
+            --dark: #121212;
+            --dark-light: #1E1E1E;
+            --text: #E0E0E0;
+            --text-muted: #A0A0A0;
             --white: #ffffff;
-            --cream: #FAF9F7;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        
+
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--dark);
-            color: var(--white);
+            color: var(--text);
             font-size: 18px;
             line-height: 1.7;
         }
@@ -52,13 +52,13 @@
             padding: 0 24px;
         }
 
-        /* Header - minimal */
+        /* Header */
         header {
             padding: 20px 0;
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            background: rgba(13, 10, 20, 0.9);
+            background: rgba(18, 18, 18, 0.95);
             backdrop-filter: blur(12px);
         }
 
@@ -91,7 +91,7 @@
         }
 
         .nav-links a {
-            color: var(--purple-glow);
+            color: var(--text);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
@@ -120,7 +120,7 @@
             display: none;
             width: 40px;
             height: 40px;
-            background: rgba(139, 92, 246, 0.1);
+            background: rgba(255, 255, 255, 0.1);
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -134,7 +134,7 @@
             display: block;
             width: 100%;
             height: 2px;
-            background: var(--purple-light);
+            background: var(--text);
             border-radius: 2px;
             transition: all 0.3s;
         }
@@ -148,7 +148,7 @@
             position: fixed;
             top: 78px;
             left: 0; right: 0;
-            background: rgba(13, 10, 20, 0.98);
+            background: rgba(18, 18, 18, 0.98);
             padding: 20px 24px;
             z-index: 99;
         }
@@ -161,7 +161,7 @@
             text-decoration: none;
             font-size: 17px;
             padding: 14px 0;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Story sections */
@@ -170,7 +170,7 @@
             position: relative;
         }
 
-        /* Hero - Elda's intro */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -211,15 +211,14 @@
 
         .hero-subtext {
             font-size: 17px;
-            color: var(--purple-glow);
+            color: var(--text);
             margin-bottom: 40px;
         }
 
         .scroll-hint {
             margin-top: 60px;
             font-size: 14px;
-            color: var(--purple-light);
-            opacity: 0.6;
+            color: var(--text-muted);
             animation: bounce 2s ease-in-out infinite;
         }
 
@@ -234,7 +233,7 @@
         }
 
         .story-block:nth-child(even) {
-            background: linear-gradient(180deg, transparent 0%, rgba(30, 19, 51, 0.3) 50%, transparent 100%);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .story-text {
@@ -252,15 +251,14 @@
         }
 
         .story-text .highlight {
-            color: var(--purple-light);
+            color: var(--teal);
         }
 
         .story-aside {
             font-family: 'DM Sans', sans-serif;
             font-size: 16px;
-            color: var(--purple-glow);
+            color: var(--text-muted);
             margin-top: 24px;
-            opacity: 0.8;
         }
 
         /* The problem */
@@ -272,15 +270,15 @@
             font-family: 'Instrument Serif', serif;
             font-size: clamp(80px, 15vw, 140px);
             font-weight: 400;
-            color: var(--purple);
+            color: var(--teal);
             line-height: 1;
             margin-bottom: 16px;
-            opacity: 0.8;
+            opacity: 0.6;
         }
 
         .problem-label {
             font-size: 15px;
-            color: var(--purple-glow);
+            color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 40px;
@@ -293,7 +291,7 @@
             padding: 48px;
             margin: 60px auto;
             max-width: 600px;
-            border: 1px solid rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .confession p {
@@ -315,7 +313,7 @@
             margin-top: 24px;
         }
 
-        /* The solution - simple */
+        /* The solution */
         .solution {
             text-align: center;
         }
@@ -340,12 +338,12 @@
 
         .step-text {
             font-size: 16px;
-            color: var(--purple-glow);
+            color: var(--text);
         }
 
         .arrow {
             font-size: 24px;
-            color: var(--purple-light);
+            color: var(--text-muted);
             opacity: 0.4;
             align-self: center;
         }
@@ -360,11 +358,12 @@
             font-family: 'Instrument Serif', serif;
             font-size: clamp(28px, 4vw, 36px);
             margin-bottom: 12px;
+            color: var(--white);
         }
 
         .cta-section .tagline {
             font-size: 17px;
-            color: var(--purple-glow);
+            color: var(--text);
             margin-bottom: 40px;
         }
 
@@ -402,14 +401,13 @@
         .cta-note {
             margin-top: 32px;
             font-size: 14px;
-            color: var(--purple-glow);
-            opacity: 0.6;
+            color: var(--text-muted);
         }
 
         /* Footer */
         footer {
             padding: 48px 0;
-            border-top: 1px solid rgba(139, 92, 246, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         footer .container-wide {
@@ -426,7 +424,7 @@
         }
 
         .footer-links a {
-            color: var(--purple-glow);
+            color: var(--text);
             text-decoration: none;
             font-size: 14px;
         }
@@ -445,8 +443,8 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--purple-light);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
             transition: all 0.3s;
         }
 
@@ -462,33 +460,32 @@
             text-align: center;
             margin-top: 24px;
             padding-top: 24px;
-            border-top: 1px solid rgba(139, 92, 246, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 13px;
-            color: var(--purple-glow);
-            opacity: 0.5;
+            color: var(--text-muted);
         }
 
         /* Mobile */
         @media (max-width: 768px) {
             section { padding: 80px 0; }
-            
+
             .nav-links { display: none; }
             .menu-toggle { display: flex; }
-            
+
             .solution-steps { gap: 32px; }
             .arrow { display: none; }
-            
+
             .confession { padding: 32px 24px; margin: 40px auto; }
-            
+
             footer .container-wide {
                 flex-direction: column;
                 text-align: center;
             }
 
-            .footer-links { 
-                flex-wrap: wrap; 
-                justify-content: center; 
-                gap: 16px; 
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
             }
 
             .cta-buttons {
@@ -548,14 +545,14 @@
                     </g>
                 </svg>
             </div>
-            
+
             <h1>
-                I'm going to be honest with you.<br>
-                <em>I've been watching you scroll.</em>
+                Look, we've all been there.<br>
+                <em>Forty minutes deep into Yelp.</em>
             </h1>
-            
+
             <p class="hero-subtext">
-                My name is Elda. I'm a bird. And I think I can help.
+                I'm Elda. I built something that might help.
             </p>
 
             <p class="scroll-hint">↓ hear me out</p>
@@ -575,7 +572,7 @@
                 You're still on your couch.
             </p>
             <p class="story-aside">
-                I'm not judging. Okay, maybe a little.
+                Sound familiar? Yeah, me too.
             </p>
         </div>
     </section>
@@ -585,15 +582,15 @@
         <div class="container">
             <div class="big-number">∞</div>
             <p class="problem-label">options available</p>
-            
+
             <p class="story-text">
-                Here's what I don't understand about you humans.
+                Here's the weird thing about having unlimited choices.
             </p>
             <p class="story-text" style="margin-top: 24px;">
-                You have <em>unlimited choices.</em> Every restaurant, bar, and thing-to-do at your fingertips. Every review. Every rating. Every photo.
+                Every restaurant, bar, and thing-to-do is at our fingertips. Every review. Every rating. Every photo.
             </p>
             <p class="story-text" style="margin-top: 24px;">
-                And somehow this has made going out... <span class="highlight">harder?</span>
+                And somehow that's made going out... <span class="highlight">harder?</span>
             </p>
         </div>
     </section>
@@ -602,13 +599,13 @@
     <section class="story-block">
         <div class="container">
             <p class="story-text">
-                You used to just <em>go places.</em>
+                We used to just <em>go places.</em>
             </p>
             <p class="story-text" style="margin-top: 24px;">
-                Someone would say "let's try that spot" and you'd... go. No 45-minute research session. No pros-and-cons list. No analysis paralysis.
+                Someone would say "let's try that spot" and we'd... go. No 45-minute research session. No pros-and-cons list. No analysis paralysis.
             </p>
             <p class="story-text" style="margin-top: 24px;">
-                I miss those days. And I wasn't even alive for them.
+                I miss that. Maybe you do too.
             </p>
         </div>
     </section>
@@ -619,7 +616,7 @@
             <div class="confession">
                 <p>So I made something.</p>
                 <p>You tell me what you're in the mood for.</p>
-                <p>I tell you exactly where to go.</p>
+                <p>I give you exactly where to go.</p>
                 <p>Not 50 options. Not "top 10" lists. Just <em>one plan.</em></p>
                 <p>Then you close the app and go live your life.</p>
                 <p class="sig">— Elda</p>
@@ -633,7 +630,7 @@
             <p class="story-text" style="text-align: center; margin-bottom: 20px;">
                 That's it. That's the whole thing.
             </p>
-            
+
             <div class="solution-steps">
                 <div class="solution-step">
                     <div class="step-emoji">💭</div>
@@ -657,8 +654,8 @@
     <section class="cta-section" id="download">
         <div class="container">
             <h2>Ready to stop scrolling?</h2>
-            <p class="tagline">Download the app. Or don't. I'm a bird, not a cop.</p>
-            
+            <p class="tagline">Download the app. It's free, no ads, no nonsense.</p>
+
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/app/elda-loop" class="store-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
@@ -676,7 +673,7 @@
                 </a>
             </div>
 
-            <p class="cta-note">Free. No ads. Just a bird who wants you to go outside.</p>
+            <p class="cta-note">Free forever. I just want you to go outside.</p>
         </div>
     </section>
 
@@ -702,7 +699,7 @@
                 </a>
             </div>
 
-            <p class="footer-copy">© 2026 Elda Loop LLC · Made by a bird who believes in you</p>
+            <p class="footer-copy">© 2026 Elda Loop LLC · Made with love (and mild exasperation)</p>
         </div>
     </footer>
 

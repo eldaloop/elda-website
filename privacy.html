@@ -13,50 +13,52 @@
         :root {
             --purple: #8B5CF6;
             --purple-light: #A78BFA;
-            --purple-glow: #C4B5FD;
             --purple-dark: #6D28D9;
             --teal: #3DBDA8;
             --teal-light: #5EEAD4;
-            --dark: #0D0A14;
-            --dark-light: #1A1525;
+            --dark: #121212;
+            --dark-light: #1E1E1E;
+            --text: #E0E0E0;
+            --text-muted: #A0A0A0;
             --white: #ffffff;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--dark);
-            color: var(--white);
+            color: var(--text);
             font-size: 16px;
             line-height: 1.8;
         }
         .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        
+
         header {
             padding: 18px 0;
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            background: rgba(13, 10, 20, 0.9);
+            background: rgba(18, 18, 18, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         header .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); }
         .logo svg { width: 42px; height: 42px; }
         .logo span { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; }
-        .back-link { color: var(--purple-glow); text-decoration: none; font-size: 14px; }
+        .back-link { color: var(--text); text-decoration: none; font-size: 14px; }
         .back-link:hover { color: var(--teal-light); }
-        
+
         main { padding: 140px 0 80px; }
-        
+
         h1 {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 40px;
             font-weight: 700;
             margin-bottom: 8px;
+            color: var(--white);
         }
-        .last-updated { color: var(--purple-glow); font-size: 14px; margin-bottom: 40px; opacity: 0.7; }
-        
+        .last-updated { color: var(--text-muted); font-size: 14px; margin-bottom: 40px; }
+
         h2 {
             font-family: 'Bricolage Grotesque', sans-serif;
             font-size: 22px;
@@ -64,29 +66,29 @@
             margin: 48px 0 16px;
             color: var(--teal-light);
         }
-        p { margin-bottom: 16px; color: var(--purple-glow); }
+        p { margin-bottom: 16px; color: var(--text); }
         strong { color: var(--white); }
         ul { margin: 16px 0; padding-left: 24px; }
-        li { margin-bottom: 10px; color: var(--purple-glow); }
+        li { margin-bottom: 10px; color: var(--text); }
         li::marker { color: var(--teal); }
         a { color: var(--teal-light); }
         a:hover { color: var(--teal); }
-        
+
         .highlight-box {
             background: var(--dark-light);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 20px;
             margin: 24px 0;
         }
-        
+
         footer {
             padding: 32px 0;
-            border-top: 1px solid rgba(139, 92, 246, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         footer .container { max-width: 1200px; }
         .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
-        .footer-links a { color: var(--purple-glow); text-decoration: none; font-size: 14px; }
+        .footer-links a { color: var(--text); text-decoration: none; font-size: 14px; }
         .footer-links a:hover { color: var(--teal-light); }
     </style>
 </head>
@@ -115,19 +117,19 @@
             <p>This Privacy Policy explains how Elda Loop LLC ("we," "our," or "us") handles your information when you use the Elda Loop app. We believe in being straightforward about data practices.</p>
 
             <h2>What We Collect</h2>
-            
+
             <p><strong>Account Information:</strong> When you sign up, we collect your email, name, and age range. You can optionally add profile details like photos and interests.</p>
-            
+
             <p><strong>Location Data:</strong> We use your zip code for local recommendations. When using Journey Mode (navigation), we access precise location with your permission. You can disable this anytime in your device settings.</p>
-            
+
             <p><strong>Preferences:</strong> Your cuisine preferences, budget, dining companions, and activity interests — all so we can give you better recommendations.</p>
-            
+
             <p><strong>Usage Data:</strong> How you interact with the app — plans viewed, places visited, items saved to your Vault.</p>
 
             <p><strong>Messages:</strong> If you use our chat feature, we store messages to provide the service.</p>
 
             <h2>How We Use It</h2>
-            
+
             <ul>
                 <li>Provide personalized recommendations</li>
                 <li>Enable navigation and Journey Mode</li>
@@ -140,7 +142,7 @@
             </ul>
 
             <h2>Third-Party Services</h2>
-            
+
             <div class="highlight-box">
                 <ul>
                     <li><strong>Supabase</strong> — Authentication and database</li>
@@ -151,9 +153,9 @@
             </div>
 
             <h2>Data Sharing</h2>
-            
+
             <p><strong>We don't sell your personal information.</strong> We may share data in these cases:</p>
-            
+
             <ul>
                 <li><strong>With Other Users:</strong> If you enable social features, your public profile and open activities are visible to others</li>
                 <li><strong>Service Providers:</strong> Third-party services listed above, as needed to operate the app</li>
@@ -162,11 +164,11 @@
             </ul>
 
             <h2>Data Retention</h2>
-            
+
             <p>We keep your data as long as your account is active. Delete your account anytime in settings — we'll remove your data within 30 days. Some anonymized usage data may be retained for analytics.</p>
 
             <h2>Your Rights</h2>
-            
+
             <ul>
                 <li>Access your personal data</li>
                 <li>Correct inaccurate information</li>
@@ -175,27 +177,27 @@
                 <li>Opt out of promotional emails</li>
                 <li>Disable location tracking</li>
             </ul>
-            
+
             <p>Email <a href="mailto:privacy@eldaloop.com">privacy@eldaloop.com</a> to exercise these rights.</p>
 
             <h2>Security</h2>
-            
+
             <p>We use encryption in transit and at rest, secure authentication, and regular security reviews. No system is 100% secure, but we take this seriously.</p>
 
             <h2>Age Requirement</h2>
-            
+
             <p>Elda Loop is for users 18 and older. We don't knowingly collect data from minors. If you believe someone under 18 has signed up, contact us.</p>
 
             <h2>California Residents</h2>
-            
+
             <p>CCPA provides additional rights: right to know what data we collect, right to delete, right to opt out of sales (we don't sell data anyway).</p>
 
             <h2>Changes</h2>
-            
+
             <p>We may update this policy. We'll notify you of significant changes via the app or email.</p>
 
             <h2>Contact</h2>
-            
+
             <p>
                 Elda Loop LLC<br>
                 <a href="mailto:privacy@eldaloop.com">privacy@eldaloop.com</a><br>

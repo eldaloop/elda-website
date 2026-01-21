@@ -9,29 +9,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --purple: #8B5CF6;
             --purple-light: #A78BFA;
-            --purple-glow: #C4B5FD;
             --purple-dark: #6D28D9;
             --teal: #3DBDA8;
             --teal-light: #5EEAD4;
             --teal-dark: #2A9D8F;
-            --pink: #F472B6;
-            --yellow: #FBBF24;
-            --dark: #0D0A14;
-            --dark-light: #1A1525;
+            --dark: #121212;
+            --dark-light: #1E1E1E;
+            --text: #E0E0E0;
+            --text-muted: #A0A0A0;
             --white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--dark);
-            color: var(--white);
+            color: var(--text);
             font-size: 17px;
             line-height: 1.6;
         }
@@ -48,9 +47,9 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            background: rgba(13, 10, 20, 0.9);
+            background: rgba(18, 18, 18, 0.95);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         header .container {
@@ -81,7 +80,7 @@
         }
 
         .nav-links a {
-            color: var(--purple-glow);
+            color: var(--text);
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
@@ -98,7 +97,7 @@
             gap: 5px;
             width: 42px;
             height: 42px;
-            background: rgba(139, 92, 246, 0.12);
+            background: rgba(255, 255, 255, 0.1);
             border: none;
             border-radius: 10px;
             cursor: pointer;
@@ -109,7 +108,7 @@
             display: block;
             width: 100%;
             height: 2px;
-            background: var(--purple-light);
+            background: var(--text);
             border-radius: 2px;
             transition: all 0.3s;
         }
@@ -123,10 +122,10 @@
             position: fixed;
             top: 78px;
             left: 0; right: 0;
-            background: rgba(13, 10, 20, 0.98);
+            background: rgba(18, 18, 18, 0.98);
             backdrop-filter: blur(12px);
             padding: 20px 24px;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 99;
         }
 
@@ -139,7 +138,7 @@
             font-size: 17px;
             font-weight: 500;
             padding: 14px 0;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Page Content */
@@ -157,13 +156,14 @@
             font-size: clamp(36px, 5vw, 52px);
             font-weight: 700;
             margin-bottom: 16px;
+            color: var(--white);
         }
 
         .page-header h1 span { color: var(--teal-light); }
 
         .page-header p {
             font-size: 18px;
-            color: var(--purple-glow);
+            color: var(--text);
             max-width: 500px;
             margin: 0 auto;
         }
@@ -180,9 +180,9 @@
         .category-btn {
             padding: 10px 20px;
             border-radius: 100px;
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--purple-glow);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
@@ -190,9 +190,9 @@
         }
 
         .category-btn:hover, .category-btn.active {
-            background: var(--purple);
-            color: var(--white);
-            border-color: var(--purple);
+            background: var(--teal);
+            color: var(--dark);
+            border-color: var(--teal);
         }
 
         /* Articles Grid */
@@ -203,10 +203,10 @@
         }
 
         .article-card {
-            background: linear-gradient(145deg, rgba(26, 21, 37, 0.8) 0%, rgba(13, 10, 20, 0.8) 100%);
+            background: var(--dark-light);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
             text-decoration: none;
             color: var(--white);
@@ -214,15 +214,15 @@
         }
 
         .article-card:hover {
-            border-color: rgba(139, 92, 246, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(139, 92, 246, 0.15);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
         }
 
         .article-image {
             width: 100%;
             height: 180px;
-            background: linear-gradient(135deg, var(--purple-dark) 0%, var(--teal-dark) 100%);
+            background: linear-gradient(135deg, #2A9D8F 0%, #3DBDA8 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -255,7 +255,7 @@
         }
 
         .article-card p {
-            color: var(--purple-glow);
+            color: var(--text);
             font-size: 14px;
             line-height: 1.6;
             margin-bottom: 16px;
@@ -266,36 +266,13 @@
             justify-content: space-between;
             align-items: center;
             font-size: 13px;
-            color: var(--purple-light);
-            opacity: 0.7;
-        }
-
-        /* Empty state */
-        .coming-soon {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .coming-soon-emoji {
-            font-size: 64px;
-            margin-bottom: 20px;
-        }
-
-        .coming-soon h2 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        .coming-soon p {
-            color: var(--purple-glow);
-            font-size: 16px;
+            color: var(--text-muted);
         }
 
         /* Footer */
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(139, 92, 246, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         footer .container {
@@ -312,7 +289,7 @@
         }
 
         .footer-links a {
-            color: var(--purple-glow);
+            color: var(--text);
             text-decoration: none;
             font-size: 14px;
         }
@@ -320,9 +297,8 @@
         .footer-links a:hover { color: var(--teal-light); }
 
         .footer-copy {
-            color: var(--purple-glow);
+            color: var(--text-muted);
             font-size: 13px;
-            opacity: 0.6;
         }
 
         @media (max-width: 900px) {
@@ -371,7 +347,7 @@
         <div class="container">
             <div class="page-header">
                 <h1>Learn & <span>Explore</span></h1>
-                <p>Tips, guides, and inspiration to help you get out there and make the most of your adventures.</p>
+                <p>Tips, guides, and real talk to help you get out there and actually do stuff.</p>
             </div>
 
             <div class="categories">
@@ -379,7 +355,6 @@
                 <button class="category-btn">Date Ideas</button>
                 <button class="category-btn">Hobbies</button>
                 <button class="category-btn">Tips</button>
-                <button class="category-btn">City Guides</button>
                 <button class="category-btn">Food & Drink</button>
             </div>
 
@@ -437,9 +412,9 @@
                 </a>
 
                 <a href="/articles/finding-third-place.html" class="article-card">
-                    <div class="article-image">🧘</div>
+                    <div class="article-image">☕</div>
                     <div class="article-content">
-                        <span class="article-tag">Hobbies</span>
+                        <span class="article-tag">Tips</span>
                         <h3>Finding Your "Third Place" (And Why It Matters)</h3>
                         <p>You have home, work... but where's your third place? Why everyone needs a regular hangout spot.</p>
                         <div class="article-meta">
